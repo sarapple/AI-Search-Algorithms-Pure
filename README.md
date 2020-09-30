@@ -20,7 +20,9 @@ Given an initial state of the board, the combinatorial search problem is to find
 The blank space may be swapped with a component in one of the four directions {‘Up’, ‘Down’, ‘Left’, ‘Right’}, one move at a time. The cost of moving from one configuration of the board to another is the same and equal to one. Thus, the total cost of path is equal to the number of moves made from the initial state to the goal state.
 ```
 
-A preexisting skeleton is provided from `driver.py` (essentially the game structure and not the algorithms), and all other code is written by myself.
+A preexisting skeleton is provided from `puzzle_state.py` and `driver.py` (essentially the game structure and not the algorithms), and all other code is written by myself.
+- The `puzzle_state.py` file was adjusted from the original to return a list of tuples of (direction, child) instead of just a list of children.
+- `driver.py` was adjusted to use my code
 
 ## Process for revealing nodes
 Searches begin by visiting the root node of the search tree, given by the initial state. Among other book-keeping details, three major things happen in sequence in order to visit a node:
@@ -39,12 +41,3 @@ python3 driver.py bfs 1,2,5,3,4,0,6,7,8
 python3 driver.py dfs 1,2,5,3,4,0,6,7,8
 python3 driver.py ast 1,2,5,3,4,0,6,7,8
 ```
-
-# Tasks
-- Run it, set up env
-- Implement BFS
-- Check performance
-- Implement DFS
-- Check performance
-- Implement A-Star
-- Check performance
